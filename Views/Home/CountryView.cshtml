@@ -1,0 +1,22 @@
+﻿@{
+    ViewBag.Title = "CountryView";
+    Layout = null;
+}
+
+<h2 style="text-align:center">Country View</h2>
+
+@for (int i = 0; i < ViewBag.CountryNames.Count; i++)
+{
+
+    <h3>Country Name: @ViewBag.CountryNames[i]</h3>
+    <h3>Country Official Name: @ViewBag.CountryOfficialNames[i]</h3>
+
+    <span> <img src="@ViewBag.CountryFlags[i]" alt="@ViewBag.CountryNames[i] Flag" width="100" height="50" /></span>
+    <br />
+    <h4>Population: @ViewBag.Population[i]</h4>
+    <br />
+    <a>Google Map: @ViewBag.MapLink[i]</a>
+    <br />
+
+
+}

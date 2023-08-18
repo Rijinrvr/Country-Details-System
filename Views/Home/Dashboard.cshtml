@@ -1,0 +1,43 @@
+﻿@{
+    ViewBag.Title = "Dashboard";
+    Layout = null;
+}
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>@ViewBag.Title</title>
+    <style>
+        body {
+            background-color: #00ff90; 
+        }
+
+        .container {
+            background-color: #00ffff; 
+            padding: 20px;
+            border-radius: 5px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2 class="container" style="text-align:center">Country Details System</h2>
+
+        @using (Html.BeginForm("CountryView", "Home", FormMethod.Post))
+        {
+            <select name="selectedCountry" class="form-control">
+                <option value="">Select a country</option>
+                @foreach (var country in ViewBag.CountryNames)
+                {
+                    <option value="@country">@country</option>
+                }
+            </select>
+            <input type="submit" value="Submit" />
+        }
+
+    </div>
+
+    
+</body>
+</html>
